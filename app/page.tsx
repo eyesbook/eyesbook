@@ -18,7 +18,19 @@ const services = [
   }
 ];
 
-const brands = ["MATSUDA", "PROJEKT PRODUKT", "MARKUS T", "999.9", "MASUNAGA"];
+const brands = [
+  "MATSUDA",
+  "PROJEKT PRODUKT",
+  "MARKUS T",
+  "999.9",
+  "MASUNAGA",
+  "WOLFGANG PROSKCH",
+  "FRANK CUSTOM",
+  "annu",
+  "ENALLOID",
+  "BLACKFIN",
+  "720"
+];
 
 export default function Home() {
   return (

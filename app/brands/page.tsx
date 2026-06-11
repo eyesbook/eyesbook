@@ -28,6 +28,36 @@ const brandGroups = [
     note: "經典工藝與紮實做工，適合追求長久耐看的鏡框。"
   },
   {
+    name: "WOLFGANG PROSKCH",
+    origin: "Germany",
+    note: "細緻線條與鮮明輪廓並重，呈現成熟、俐落且有個性的配戴印象。"
+  },
+  {
+    name: "FRANK CUSTOM",
+    origin: "Korea",
+    note: "以復古比例結合現代設計語彙，適合喜歡低調但有辨識度的人。"
+  },
+  {
+    name: "annu",
+    origin: "Japan",
+    note: "簡潔柔和的日系風格，重視輕盈感、舒適度與日常搭配。"
+  },
+  {
+    name: "ENALLOID",
+    origin: "Japan",
+    note: "以膠框工藝與溫潤色彩見長，兼具復古氣質與生活感。"
+  },
+  {
+    name: "BLACKFIN",
+    origin: "Italy",
+    note: "鈦金屬結構與俐落設計，適合追求輕量、耐用與現代感的人。"
+  },
+  {
+    name: "720",
+    origin: "Taiwan",
+    note: "注重配戴機能與日常實用性，提供清爽、易搭配的鏡框選擇。"
+  },
+  {
     name: "Selected European Frames",
     origin: "Europe",
     note: "補足不同臉型與穿搭需求，提供更多材質與色彩選擇。"
