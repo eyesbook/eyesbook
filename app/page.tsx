@@ -24,7 +24,7 @@ const brands = [
   "MARKUS T",
   "999.9",
   "MASUNAGA",
-  "WOLFGANG PROSKCH",
+  "WOLFGANG PROKSCH",
   "FRANK CUSTOM",
   "annu",
   "ENALLOID",
