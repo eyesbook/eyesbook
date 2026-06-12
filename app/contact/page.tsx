@@ -1,4 +1,5 @@
-import Link from "next/link";
+"use client";
+
 import { PageHero } from "@/components/PageHero";
 
 const contactRows = [
@@ -9,6 +10,35 @@ const contactRows = [
 ];
 
 export default function ContactPage() {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = String(formData.get("name") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+
+    const body = [
+      "您好，我想預約 eyesbook 到店服務。",
+      "",
+      `姓名：${name}`,
+      `電話：${phone}`,
+      `Email：${email}`,
+      "",
+      "預約需求：",
+      message,
+      "",
+      "謝謝。"
+    ].join("\n");
+
+    const mailtoUrl = `mailto:eyesbook@hotmail.com?subject=${encodeURIComponent(
+      "eyesbook 預約到店"
+    )}&body=${encodeURIComponent(body)}`;
+
+    window.location.href = mailtoUrl;
+  }
+
   return (
     <>
       <PageHero
@@ -27,7 +57,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <form className="border border-line bg-paper p-7 sm:p-9">
+          <form className="border border-line bg-paper p-7 sm:p-9" onSubmit={handleSubmit}>
             <div className="grid gap-5 sm:grid-cols-2">
               <label className="text-sm font-medium text-ink">
                 姓名
@@ -62,12 +92,12 @@ export default function ContactPage() {
                 placeholder="例如：想重新驗光、挑選日常鏡框、諮詢多焦點鏡片"
               />
             </label>
-            <Link
-              href="mailto:eyesbook@hotmail.com?subject=eyesbook%20%E9%A0%90%E7%B4%84%E5%88%B0%E5%BA%97"
+            <button
+              type="submit"
               className="focus-ring mt-7 inline-flex min-h-12 w-full items-center justify-center rounded-sm bg-ink px-7 text-sm font-medium text-paper transition hover:bg-stone sm:w-auto"
             >
               寄出預約信
-            </Link>
+            </button>
           </form>
         </div>
       </section>
