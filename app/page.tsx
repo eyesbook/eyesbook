@@ -19,17 +19,19 @@ const services = [
 ];
 
 const brands = [
-  "MATSUDA",
+  "999.9",
   "PROJEKT PRODUKT",
   "MARKUS T",
-  "999.9",
-  "MASUNAGA",
   "WOLFGANG PROKSCH",
   "FRANK CUSTOM",
   "annu",
   "ENALLOID",
-  "BLACKFIN",
-  "720"
+  "720",
+  "COACH",
+  "RayBan",
+  "MATSUDA",
+  "MASUNAGA",
+  "BLACKFIN"
 ];
 
 export default function Home() {
