@@ -96,6 +96,37 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-ink py-24 text-paper">
+        <div className="section-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+          <div>
+            <p className="text-xs font-medium uppercase tracking-[0.28em] text-brass">
+              featured
+            </p>
+            <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
+              RayBan × Star Wars 聯名系列
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-paper/72">
+              官方形象影片同步曝光。歡迎預約到店，了解 RayBan 聯名系列與店內可試戴款式。
+            </p>
+            <Link
+              href="/contact"
+              className="focus-ring mt-8 inline-flex min-h-12 items-center justify-center rounded-sm bg-paper px-7 text-sm font-medium text-ink transition hover:bg-warm"
+            >
+              預約到店試戴
+            </Link>
+          </div>
+          <div className="aspect-[9/16] max-h-[680px] w-full overflow-hidden rounded-sm bg-black shadow-soft sm:aspect-video lg:aspect-[9/16] lg:justify-self-end">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube.com/embed/PMgiCfvZ0K0"
+              title="RayBan × Star Wars official video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="py-24">
         <div className="section-shell grid gap-14 lg:grid-cols-[0.8fr_1fr] lg:items-start">
           <SectionHeading

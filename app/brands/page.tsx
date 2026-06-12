@@ -96,30 +96,6 @@ export default function BrandsPage() {
         title="選品不是越多越好，而是每一副都有理由。"
         description="eyesbook 精選日本與國際鏡框品牌，從結構、材質、比例與售後調整性篩選，讓選框過程更清楚。"
       />
-      <section className="border-y border-line bg-ink py-24 text-paper">
-        <div className="section-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div>
-            <p className="text-xs font-medium uppercase tracking-[0.28em] text-brass">
-              featured
-            </p>
-            <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight sm:text-4xl">
-              RayBan × Star Wars 聯名系列
-            </h2>
-            <p className="mt-5 text-sm leading-7 text-paper/72">
-              官方形象影片同步曝光。歡迎預約到店，了解 RayBan 聯名系列與店內可試戴款式。
-            </p>
-          </div>
-          <div className="aspect-[9/16] max-h-[680px] w-full overflow-hidden rounded-sm bg-black shadow-soft sm:aspect-video lg:aspect-[9/16] lg:justify-self-end">
-            <iframe
-              className="h-full w-full"
-              src="https://www.youtube.com/embed/PMgiCfvZ0K0"
-              title="RayBan × Star Wars official video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      </section>
       <section className="border-y border-line bg-[#fbf8f2] py-24">
         <div className="section-shell grid gap-px overflow-hidden border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
           {brandGroups.map((brand) => (
