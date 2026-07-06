@@ -3,8 +3,10 @@ import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "eyesbook｜日系質感眼鏡店",
   description:
     "eyesbook 以日系簡約美學、專業驗光與精選鏡框，陪你找到舒服且耐看的日常眼鏡。",
