@@ -78,6 +78,35 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-y border-line bg-paper py-16">
+        <div className="section-shell grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
+          <div>
+            <p className="eyebrow">faq search</p>
+            <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl">
+              有問題想先了解？
+            </h2>
+          </div>
+          <form action="/faq" className="grid gap-3 sm:grid-cols-[1fr_auto]">
+            <label className="sr-only" htmlFor="home-faq-search">
+              輸入問題
+            </label>
+            <input
+              id="home-faq-search"
+              name="q"
+              type="search"
+              placeholder="輸入問題"
+              className="min-h-14 w-full border border-line bg-[#fbf8f2] px-5 text-base text-ink outline-none transition placeholder:text-stone/70 focus:border-ink"
+            />
+            <button
+              type="submit"
+              className="focus-ring inline-flex min-h-14 items-center justify-center rounded-sm bg-ink px-7 text-sm font-medium text-paper transition hover:bg-stone"
+            >
+              搜尋 FAQ
+            </button>
+          </form>
+        </div>
+      </section>
+
       <section className="border-y border-line bg-[#fbf8f2] py-24">
         <div className="section-shell">
           <SectionHeading
