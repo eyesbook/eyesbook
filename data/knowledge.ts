@@ -11,6 +11,7 @@ export type KnowledgeArticle = {
   tldr: string;
   summary: string;
   coverImage?: string;
+  coverImageAlt?: string;
   author: string;
   publishedAt: string;
   updatedAt: string;
@@ -275,6 +276,9 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     updatedAt: "2026-07-06",
     seoDescription:
       "如何預防小朋友度數加深？eyesbook 整理兒童近視控制、戶外日照、20-20-20護眼法則、眼軸追蹤與離焦鏡片重點。",
+    coverImage: "/images/knowledge/children-myopia-prevention.jpg",
+    coverImageAlt:
+      "預防兒童近視守則，包含控管看近時間、增加戶外日照、定期視力檢查與規律睡眠",
     tags: ["兒童視力", "驗光", "鏡框", "眼睛健康"],
     sections: {
       intro: [

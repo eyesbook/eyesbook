@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -121,6 +122,18 @@ export default function KnowledgeArticlePage({
               作者：{article.author}｜發布：{article.publishedAt}｜更新：
               {article.updatedAt}
             </p>
+            {article.coverImage ? (
+              <div className="relative mt-10 overflow-hidden border border-line bg-paper shadow-soft">
+                <Image
+                  src={article.coverImage}
+                  alt={article.coverImageAlt || article.title}
+                  width={1200}
+                  height={1200}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
+            ) : null}
           </div>
         </header>
 
