@@ -1,9 +1,20 @@
-import { articles, getArticleUrl, type ArticleEntry } from "@/data/articles";
-import { faqs } from "@/data/faqs";
+import {
+  getKnowledgeArticleUrl,
+  type KnowledgeArticle,
+  type KnowledgeFaq
+} from "@/data/knowledge";
 import { siteConfig } from "@/lib/site";
 import { JsonLd } from "./JsonLd";
 
-export function FaqSchema() {
+type FaqSchemaProps = {
+  faqs: KnowledgeFaq[];
+};
+
+export function FaqSchema({ faqs }: FaqSchemaProps) {
+  if (faqs.length === 0) {
+    return null;
+  }
+
   return (
     <JsonLd
       data={{
@@ -23,11 +34,11 @@ export function FaqSchema() {
 }
 
 type ArticleSchemaProps = {
-  article: ArticleEntry;
+  article: KnowledgeArticle;
 };
 
 export function ArticleSchema({ article }: ArticleSchemaProps) {
-  const url = `${siteConfig.url}${getArticleUrl(article)}`;
+  const url = `${siteConfig.url}${getKnowledgeArticleUrl(article)}`;
 
   return (
     <JsonLd
@@ -35,7 +46,7 @@ export function ArticleSchema({ article }: ArticleSchemaProps) {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: article.title,
-        description: article.description,
+        description: article.seoDescription,
         author: {
           "@type": "Organization",
           name: article.author
@@ -47,7 +58,8 @@ export function ArticleSchema({ article }: ArticleSchemaProps) {
         },
         datePublished: article.publishedAt,
         dateModified: article.updatedAt,
-        about: article.topic,
+        about: article.tags,
+        keywords: article.tags.join(", "),
         mainEntityOfPage: {
           "@type": "WebPage",
           "@id": url
@@ -57,6 +69,35 @@ export function ArticleSchema({ article }: ArticleSchemaProps) {
   );
 }
 
-export function getArticleBySlug(slug: string) {
-  return articles.find((article) => article.slug === slug);
+export function BreadcrumbSchema({ article }: ArticleSchemaProps) {
+  const articleUrl = `${siteConfig.url}${getKnowledgeArticleUrl(article)}`;
+
+  return (
+    <JsonLd
+      data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "首頁",
+            item: siteConfig.url
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "專業知識充電站",
+            item: `${siteConfig.url}/knowledge`
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: article.title,
+            item: articleUrl
+          }
+        ]
+      }}
+    />
+  );
 }

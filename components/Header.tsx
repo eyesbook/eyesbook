@@ -5,7 +5,7 @@ const navItems = [
   { href: "/about", label: "關於我們" },
   { href: "/brands", label: "品牌介紹" },
   { href: "/services", label: "驗光服務" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/knowledge", label: "專業知識充電站" },
   { href: "/contact", label: "預約聯絡" }
 ];
 

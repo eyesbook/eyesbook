@@ -1,6 +1,6 @@
 "use client";
 
-export function FaqQuestionForm() {
+export function KnowledgeQuestionForm() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -10,19 +10,19 @@ export function FaqQuestionForm() {
     const question = String(formData.get("question") || "").trim();
 
     const body = [
-      "您好，我想詢問 eyesbook 官網 FAQ 未收錄的問題。",
+      "您好，我想提供 eyesbook 專業知識充電站一個問題。",
       "",
       `姓名：${name}`,
       `Email：${email}`,
       "",
-      "問題內容：",
+      "提問內容：",
       question,
       "",
       "謝謝。"
     ].join("\n");
 
     const mailtoUrl = `mailto:eyesbook@hotmail.com?subject=${encodeURIComponent(
-      "eyesbook FAQ 提問"
+      "eyesbook 專業知識充電站提問"
     )}&body=${encodeURIComponent(body)}`;
 
     window.location.href = mailtoUrl;
@@ -49,11 +49,11 @@ export function FaqQuestionForm() {
         </label>
       </div>
       <label className="mt-5 block text-sm font-medium text-ink">
-        想詢問的問題
+        想詢問或建議收錄的主題
         <textarea
           className="mt-2 min-h-36 w-full resize-none border border-line bg-[#fbf8f2] px-4 py-3 text-base outline-none focus:border-ink"
           name="question"
-          placeholder="例如：某個品牌是否有現貨、驗光前需要準備什麼、是否能調整舊眼鏡"
+          placeholder="例如：兒童配鏡、夜間開車眩光、多焦點適應、鏡片保養"
           required
         />
       </label>

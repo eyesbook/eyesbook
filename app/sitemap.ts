@@ -8,7 +8,7 @@ const staticRoutes = [
   "/brands",
   "/services",
   "/contact",
-  "/faq"
+  "/knowledge"
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

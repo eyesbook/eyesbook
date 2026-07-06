@@ -86,7 +86,7 @@ export default function Home() {
               有問題想先了解？
             </h2>
           </div>
-          <form action="/faq" className="grid gap-3 sm:grid-cols-[1fr_auto]">
+          <form action="/knowledge" className="grid gap-3 sm:grid-cols-[1fr_auto]">
             <label className="sr-only" htmlFor="home-faq-search">
               輸入問題
             </label>
@@ -101,7 +101,7 @@ export default function Home() {
               type="submit"
               className="focus-ring inline-flex min-h-14 items-center justify-center rounded-sm bg-ink px-7 text-sm font-medium text-paper transition hover:bg-stone"
             >
-              搜尋 FAQ
+              搜尋文章
             </button>
           </form>
         </div>
