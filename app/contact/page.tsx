@@ -2,11 +2,19 @@
 
 import { PageHero } from "@/components/PageHero";
 
-const contactRows = [
-  ["電話", "02-8273-3768"],
-  ["Email", "eyesbook@hotmail.com"],
-  ["地址", "新北市土城區中央路二段61巷13號1F"],
-  ["營業時間", "週一~週日 11:00~21:00"]
+const locations = [
+  {
+    name: "土城店",
+    phone: "02-8273-3768",
+    address: "新北市土城區中央路二段61巷13號1F",
+    hours: ["週一~週日 11:00~21:00"]
+  },
+  {
+    name: "中和倉庫",
+    phone: "02-2221-3837",
+    address: "新北市中和區民享街93巷1號1F",
+    hours: ["週一~週五 09:00~18:00", "週六 10:00~17:00", "週日及國定假日休息"]
+  }
 ];
 
 export default function ContactPage() {
@@ -48,13 +56,32 @@ export default function ContactPage() {
       />
       <section className="border-y border-line bg-[#fbf8f2] py-24">
         <div className="section-shell grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="space-y-px overflow-hidden border border-line bg-line">
-            {contactRows.map(([label, value]) => (
-              <div key={label} className="grid gap-2 bg-paper p-6 sm:grid-cols-[7rem_1fr]">
-                <p className="text-sm font-medium text-ink">{label}</p>
-                <p className="text-sm leading-7 text-stone">{value}</p>
-              </div>
+          <div className="space-y-5">
+            {locations.map((location) => (
+              <article key={location.name} className="border border-line bg-paper p-7">
+                <p className="font-serif text-2xl font-semibold text-ink">{location.name}</p>
+                <div className="mt-5 space-y-4 text-sm leading-7 text-stone">
+                  <div>
+                    <p className="font-medium text-ink">地址</p>
+                    <p>{location.address}</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-ink">電話</p>
+                    <p>{location.phone}</p>
+                  </div>
+                  <div>
+                    <p className="font-medium text-ink">營業時間</p>
+                    {location.hours.map((hour) => (
+                      <p key={hour}>{hour}</p>
+                    ))}
+                  </div>
+                </div>
+              </article>
             ))}
+            <div className="border border-line bg-paper p-7 text-sm leading-7 text-stone">
+              <p className="font-medium text-ink">Email</p>
+              <p className="mt-2">eyesbook@hotmail.com</p>
+            </div>
           </div>
 
           <form className="border border-line bg-paper p-7 sm:p-9" onSubmit={handleSubmit}>
