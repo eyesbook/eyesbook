@@ -168,6 +168,22 @@ export default function KnowledgeArticlePage({
                 title="原理說明"
                 paragraphs={article.sections.principle}
               />
+              {article.contentImages?.map((image) => (
+                <figure key={image.src} className="border border-line bg-[#fbf8f2] p-4">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    width={1536}
+                    height={1024}
+                    className="h-auto w-full"
+                  />
+                  {image.caption ? (
+                    <figcaption className="mt-3 text-sm leading-7 text-stone">
+                      {image.caption}
+                    </figcaption>
+                  ) : null}
+                </figure>
+              ))}
               <ArticleSection
                 id="solutions"
                 title="解決方法"

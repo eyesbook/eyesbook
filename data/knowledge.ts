@@ -12,6 +12,11 @@ export type KnowledgeArticle = {
   summary: string;
   coverImage?: string;
   coverImageAlt?: string;
+  contentImages?: {
+    src: string;
+    alt: string;
+    caption?: string;
+  }[];
   author: string;
   publishedAt: string;
   updatedAt: string;
@@ -405,6 +410,82 @@ export const knowledgeArticles: KnowledgeArticle[] = [
     ],
     furtherReading: ["anisometropia", "night-driving-glare", "children-vision"],
     related: ["progressive-lens", "blue-light"]
+  },
+  {
+    slug: "lens-scratch-glare",
+    title: "鏡片上有小刮傷會造成什麼影響？",
+    tldr: "鏡片小刮傷不只是美觀問題，會讓光線散射，造成眩光、霧感、清晰度下降與夜間視力變差。",
+    summary:
+      "了解鏡片細微刮傷如何影響光線傳遞、夜間車燈眩光、對比敏感度與視覺疲勞。",
+    author: siteConfig.author,
+    publishedAt: "2026-07-07",
+    updatedAt: "2026-07-07",
+    seoDescription:
+      "鏡片上有小刮傷會造成什麼影響？eyesbook 說明鏡片刮痕造成光散射、眩光、對比下降、夜間視力變差與視覺疲勞的原因。",
+    coverImage: "/images/knowledge/lens-scratch-scattering.png",
+    coverImageAlt:
+      "鏡片細微刮傷會讓光線散射，造成影像不清楚與夜間眩光的說明圖",
+    contentImages: [
+      {
+        src: "/images/knowledge/lens-scratch-night-driving.png",
+        alt: "鏡片有小刮傷與無刮傷在夜間駕駛視覺品質上的比較",
+        caption: "夜間車燈與路燈會放大刮痕造成的光散射，讓眩光與模糊更明顯。"
+      }
+    ],
+    tags: ["鏡片", "保養", "夜間駕駛", "眼睛健康"],
+    featured: true,
+    popular: true,
+    sections: {
+      intro: [
+        "鏡片上的小刮傷，很多人以為只是美觀問題，但實際上會影響光線傳遞。",
+        "尤其在夜間、雨天、開車或看強光時，小刮痕造成的光散射會更明顯，視覺品質也更容易下降。"
+      ],
+      principle: [
+        "正常鏡片表面平滑，光線能較整齊地通過鏡片，影像看起來比較清楚。",
+        "當鏡片表面出現細微刮痕，光線會被刮痕邊緣往四面八方散開，這就是光散射。",
+        "散射光會干擾原本清楚的影像，讓黑的沒那麼黑、白的沒那麼白，也讓強光周圍產生光暈或放射狀光芒。"
+      ],
+      solutions: [
+        "若鏡片已有明顯刮痕，建議回店檢查鏡片狀況，評估是否需要更換鏡片。",
+        "日常清潔時建議先用清水沖掉灰塵，再使用專用拭鏡布與清潔用品，避免乾擦造成更多細刮痕。",
+        "不配戴時建議放入眼鏡盒保護，避免鏡片與硬物摩擦接觸。",
+        "若常夜間開車，建議定期檢查鏡片刮痕、鍍膜狀態與度數是否合適。"
+      ],
+      myths: [
+        "迷思一：小刮傷只是不好看。其實刮痕會讓光線散射，影響清晰度與夜間視覺。",
+        "迷思二：度數沒變就不用換鏡片。即使度數沒變，鏡片表面狀態也會影響影像品質。",
+        "迷思三：刮傷可以擦掉。真正的刮痕通常無法靠清潔去除，需視狀況評估是否更換。"
+      ]
+    },
+    faqs: [
+      {
+        question: "鏡片上有小刮傷會造成什麼影響？",
+        answer:
+          "小刮傷會讓原本應該直線通過鏡片的光線往四面八方散開，造成光散射。常見影響包含眩光增加、對比敏感度下降、影像清晰度降低、夜間視力變差與視覺疲勞。"
+      },
+      {
+        question: "為什麼夜間更容易感覺到鏡片刮傷？",
+        answer:
+          "夜晚瞳孔放大，更多光線會經過有刮傷的區域；汽車頭燈、路燈等強光也會讓散射更明顯，因此容易出現光暈、放射狀光芒與刺眼感。"
+      },
+      {
+        question: "鏡片小刮痕會讓度數改變嗎？",
+        answer:
+          "刮痕不會改變鏡片度數，但會降低光學品質。雖然度數沒有變，影像仍可能變得霧霧的、不夠銳利，細小文字或遠方招牌也會更難辨識。"
+      },
+      {
+        question: "鏡片刮傷會造成眼睛疲勞嗎？",
+        answer:
+          "有可能。散射光增加後，大腦需要更努力過濾干擾影像，長時間閱讀、開車或使用電腦後，更容易覺得眼睛疲勞或痠澀。"
+      },
+      {
+        question: "鏡片有刮傷可以修復嗎？",
+        answer:
+          "多數鏡片刮傷無法真正修復。如果刮痕已影響清晰度、夜間駕駛或日常舒適度，建議回店評估是否需要更換鏡片。"
+      }
+    ],
+    furtherReading: ["night-driving-glare", "lens-coating", "visual-acuity-arc-minute"],
+    related: ["blue-light", "progressive-lens"]
   }
 ];
 
