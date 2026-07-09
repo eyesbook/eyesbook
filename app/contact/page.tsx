@@ -7,13 +7,15 @@ const locations = [
     name: "土城店",
     phone: "02-8273-3768",
     address: "新北市土城區中央路二段61巷13號1F",
-    hours: ["週一~週日 11:00~21:00"]
+    hours: ["週一~週日 11:00~21:00"],
+    facebook: "https://www.facebook.com/eyesbooktuchang"
   },
   {
     name: "中和倉庫",
     phone: "02-2221-3837",
     address: "新北市中和區民享街93巷1號1F",
-    hours: ["週一~週五 09:00~18:00", "週六 10:00~17:00", "週日及國定假日休息"]
+    hours: ["週一~週五 09:00~18:00", "週六 10:00~17:00", "週日及國定假日休息"],
+    facebook: "https://www.facebook.com/eyesbook.eyewear/"
   }
 ];
 
@@ -75,12 +77,32 @@ export default function ContactPage() {
                       <p key={hour}>{hour}</p>
                     ))}
                   </div>
+                  <div>
+                    <p className="font-medium text-ink">社群</p>
+                    <a
+                      href={location.facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="underline underline-offset-4 transition hover:text-ink"
+                    >
+                      Facebook
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
             <div className="border border-line bg-paper p-7 text-sm leading-7 text-stone">
               <p className="font-medium text-ink">Email</p>
               <p className="mt-2">eyesbook@hotmail.com</p>
+              <p className="mt-5 font-medium text-ink">Instagram</p>
+              <a
+                href="https://www.instagram.com/eyesbook_tw/"
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-flex underline underline-offset-4 transition hover:text-ink"
+              >
+                @eyesbook_tw
+              </a>
             </div>
           </div>
 
