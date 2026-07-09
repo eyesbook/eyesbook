@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SocialIcon } from "./SocialIcon";
 
 export function Footer() {
   return (
@@ -28,8 +29,9 @@ export function Footer() {
                 href="https://www.facebook.com/eyesbooktuchang"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex text-paper underline underline-offset-4"
+                className="mt-2 inline-flex items-center gap-2 text-paper underline underline-offset-4"
               >
+                <SocialIcon type="facebook" />
                 土城店 Facebook
               </a>
             </div>
@@ -44,8 +46,9 @@ export function Footer() {
                 href="https://www.facebook.com/eyesbook.eyewear/"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex text-paper underline underline-offset-4"
+                className="mt-2 inline-flex items-center gap-2 text-paper underline underline-offset-4"
               >
+                <SocialIcon type="facebook" />
                 中和倉庫 Facebook
               </a>
             </div>
@@ -58,8 +61,9 @@ export function Footer() {
             href="https://www.instagram.com/eyesbook_tw/"
             target="_blank"
             rel="noreferrer"
-            className="mt-2 inline-flex text-paper underline underline-offset-4"
+            className="mt-2 inline-flex items-center gap-2 text-paper underline underline-offset-4"
           >
+            <SocialIcon type="instagram" />
             Instagram
           </a>
         </div>

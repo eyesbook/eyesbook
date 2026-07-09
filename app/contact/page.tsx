@@ -1,6 +1,7 @@
 "use client";
 
 import { PageHero } from "@/components/PageHero";
+import { SocialIcon } from "@/components/SocialIcon";
 
 const locations = [
   {
@@ -83,8 +84,9 @@ export default function ContactPage() {
                       href={location.facebook}
                       target="_blank"
                       rel="noreferrer"
-                      className="underline underline-offset-4 transition hover:text-ink"
+                      className="inline-flex items-center gap-2 underline underline-offset-4 transition hover:text-ink"
                     >
+                      <SocialIcon type="facebook" />
                       Facebook
                     </a>
                   </div>
@@ -99,8 +101,9 @@ export default function ContactPage() {
                 href="https://www.instagram.com/eyesbook_tw/"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex underline underline-offset-4 transition hover:text-ink"
+                className="mt-2 inline-flex items-center gap-2 underline underline-offset-4 transition hover:text-ink"
               >
+                <SocialIcon type="instagram" />
                 @eyesbook_tw
               </a>
             </div>
