@@ -1,8 +1,16 @@
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
 import Link from "next/link";
+import Image from "next/image";
 
-type Brand = { name: string; origin: string; note: string; website: string; href?: string };
+type Brand = {
+  name: string;
+  origin: string;
+  note: string;
+  website: string;
+  href?: string;
+  images?: { src: string; alt: string; width: number; height: number; caption: string }[];
+};
 
 const brandGroups: Brand[] = [
   {
@@ -94,7 +102,23 @@ const brandGroups: Brand[] = [
     name: "S7 ILUVU",
     origin: "Eyewear",
     note: "款式、顏色與現貨資訊，歡迎洽門市了解並預約試戴。",
-    website: ""
+    website: "",
+    images: [
+      {
+        src: "/images/brands/s7-iluvu/brand-image.jpg",
+        alt: "S7 ILUVU 灰底品牌形象照，展示鏡框彎折與品牌標誌",
+        width: 782,
+        height: 1280,
+        caption: "S7 ILUVU 品牌形象"
+      },
+      {
+        src: "/images/brands/s7-iluvu/kids-image.jpg",
+        alt: "S7 ILUVU PLAY KIDS 兒童系列形象照，粉色背景上的藍色鏡框",
+        width: 1280,
+        height: 853,
+        caption: "PLAY KIDS 兒童系列"
+      }
+    ]
   },
   {    name: "Selected European Frames",
     origin: "Europe",
@@ -114,7 +138,7 @@ export default function BrandsPage() {
       <section className="border-y border-line bg-[#fbf8f2] py-24">
         <div className="section-shell grid gap-px overflow-hidden border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
           {brandGroups.map((brand) => (
-            <article key={brand.name} className="bg-paper p-8">
+            <article key={brand.name} className={`bg-paper p-8 ${brand.images ? "md:col-span-2 lg:col-span-3" : ""}`}>
               <p className="text-xs font-medium uppercase tracking-[0.24em] text-brass">
                 {brand.origin}
               </p>
@@ -122,6 +146,23 @@ export default function BrandsPage() {
                 {brand.name}
               </h2>
               <p className="mt-5 text-sm leading-7 text-stone">{brand.note}</p>
+              {brand.images ? (
+                <div className="mt-8 grid items-start gap-8 sm:grid-cols-2">
+                  {brand.images.map((photo) => (
+                    <figure key={photo.src} className="min-w-0">
+                      <Image
+                        src={photo.src}
+                        alt={photo.alt}
+                        width={photo.width}
+                        height={photo.height}
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        className="mx-auto h-auto max-h-[640px] w-auto max-w-full"
+                      />
+                      <figcaption className="mt-4 text-center text-sm text-stone">{photo.caption}</figcaption>
+                    </figure>
+                  ))}
+                </div>
+              ) : null}
               {brand.href ? (
                 <Link href={brand.href} className="focus-ring mt-7 inline-flex min-h-11 items-center justify-center rounded-sm border border-line px-5 text-sm font-medium text-ink transition hover:border-ink hover:bg-[#fbf8f2]">
                   查看品牌與款式
