@@ -30,6 +30,7 @@ const brands = [
   "COACH",
   "RayBan",
   "MA-JI MASATOMO",
+  "S7 ILUVU",
   "MATSUDA",
   "MASUNAGA",
   "BLACKFIN"

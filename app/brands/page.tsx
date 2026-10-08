@@ -91,7 +91,12 @@ const brandGroups: Brand[] = [
     website: "https://www.blackfin.eu"
   },
   {
-    name: "Selected European Frames",
+    name: "S7 ILUVU",
+    origin: "Eyewear",
+    note: "款式、顏色與現貨資訊，歡迎洽門市了解並預約試戴。",
+    website: ""
+  },
+  {    name: "Selected European Frames",
     origin: "Europe",
     note: "補足不同臉型與穿搭需求，提供更多材質與色彩選擇。",
     website: ""
