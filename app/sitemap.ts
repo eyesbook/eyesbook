@@ -1,11 +1,13 @@
 import type { MetadataRoute } from "next";
 import { articles, getArticleUrl } from "@/data/articles";
 import { siteConfig } from "@/lib/site";
+import { majiModels } from "@/data/maji";
 
 const staticRoutes = [
   "",
   "/about",
   "/brands",
+  "/brands/ma-ji",
   "/services",
   "/contact",
   "/knowledge"
@@ -30,5 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7
     })) satisfies MetadataRoute.Sitemap;
 
-  return [...staticEntries, ...articleEntries];
+  const modelEntries = majiModels.map((model) => ({
+    url: `${siteConfig.url}/brands/ma-ji/${model.slug}`,
+    changeFrequency: "monthly",
+    priority: 0.6
+  })) satisfies MetadataRoute.Sitemap;
+
+  return [...staticEntries, ...articleEntries, ...modelEntries];
 }

@@ -29,6 +29,7 @@ const brands = [
   "720",
   "COACH",
   "RayBan",
+  "MA-JI MASATOMO",
   "MATSUDA",
   "MASUNAGA",
   "BLACKFIN"
@@ -166,7 +167,11 @@ export default function Home() {
           <div className="grid gap-px overflow-hidden border border-line bg-line sm:grid-cols-2">
             {brands.map((brand) => (
               <div key={brand} className="bg-paper px-7 py-8">
-                <p className="font-serif text-2xl font-semibold text-ink">{brand}</p>
+                <p className="font-serif text-2xl font-semibold text-ink">
+                  {brand === "MA-JI MASATOMO" ? (
+                    <Link href="/brands/ma-ji" className="focus-ring hover:underline">{brand}</Link>
+                  ) : brand}
+                </p>
                 <p className="mt-3 text-sm leading-7 text-stone">
                   輕量結構、細緻線條與耐看比例，適合日常長時間配戴。
                 </p>

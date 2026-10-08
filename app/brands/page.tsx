@@ -1,7 +1,10 @@
 import { CtaBand } from "@/components/CtaBand";
 import { PageHero } from "@/components/PageHero";
+import Link from "next/link";
 
-const brandGroups = [
+type Brand = { name: string; origin: string; note: string; website: string; href?: string };
+
+const brandGroups: Brand[] = [
   {
     name: "999.9",
     origin: "Japan",
@@ -63,6 +66,13 @@ const brandGroups = [
     website: "https://www.ray-ban.com"
   },
   {
+    name: "MA-JI MASATOMO",
+    origin: "Japan",
+    note: "源自日本時裝設計，融合現代而優雅的復古風格、生活哲學與工藝美學。",
+    website: "",
+    href: "/brands/ma-ji"
+  },
+  {
     name: "MATSUDA",
     origin: "Japan",
     note: "融合日系工藝與細膩雕刻細節，適合追求質感與個性的人。",
@@ -107,7 +117,11 @@ export default function BrandsPage() {
                 {brand.name}
               </h2>
               <p className="mt-5 text-sm leading-7 text-stone">{brand.note}</p>
-              {brand.website ? (
+              {brand.href ? (
+                <Link href={brand.href} className="focus-ring mt-7 inline-flex min-h-11 items-center justify-center rounded-sm border border-line px-5 text-sm font-medium text-ink transition hover:border-ink hover:bg-[#fbf8f2]">
+                  查看品牌與款式
+                </Link>
+              ) : brand.website ? (
                 <a
                   href={brand.website}
                   target="_blank"
