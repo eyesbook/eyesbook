@@ -138,7 +138,7 @@ export default function BrandsPage() {
       <section className="border-y border-line bg-[#fbf8f2] py-24">
         <div className="section-shell grid gap-px overflow-hidden border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
           {brandGroups.map((brand) => (
-            <article key={brand.name} className={`bg-paper p-8 ${brand.images ? "md:col-span-2 lg:col-span-3" : ""}`}>
+            <article key={brand.name} className="bg-paper p-8">
               <p className="text-xs font-medium uppercase tracking-[0.24em] text-brass">
                 {brand.origin}
               </p>
@@ -147,18 +147,20 @@ export default function BrandsPage() {
               </h2>
               <p className="mt-5 text-sm leading-7 text-stone">{brand.note}</p>
               {brand.images ? (
-                <div className="mt-8 grid items-start gap-8 sm:grid-cols-2">
+                <div className="mt-6 grid grid-cols-2 items-start gap-3">
                   {brand.images.map((photo) => (
                     <figure key={photo.src} className="min-w-0">
-                      <Image
+                      <a href={photo.src} target="_blank" rel="noreferrer" className="focus-ring block" title="查看完整圖片">
+                        <Image
                         src={photo.src}
                         alt={photo.alt}
                         width={photo.width}
                         height={photo.height}
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        className="mx-auto h-auto max-h-[640px] w-auto max-w-full"
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 17vw"
+                        className="h-32 w-full object-contain"
                       />
-                      <figcaption className="mt-4 text-center text-sm text-stone">{photo.caption}</figcaption>
+                      </a>
+                      <figcaption className="mt-2 text-center text-xs leading-5 text-stone">{photo.caption}</figcaption>
                     </figure>
                   ))}
                 </div>
